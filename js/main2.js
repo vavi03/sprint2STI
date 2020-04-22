@@ -26,21 +26,23 @@ function createUser(userData) {
     title.innerHTML = userData.Nombre;
 
     let colA = document.createElement("h3");
-    colA.innerHTML = userData.A;
+    colA.innerHTML = userData.Edad;
 
     let colB = document.createElement("h3");
-    colB.innerHTML = userData.B;
+    colB.innerHTML = userData.Peso;
 
     let colC = document.createElement("h3");
-    colC.innerHTML = userData.C;
+    colC.innerHTML = userData.Altura;
 
-    
+    let colD = document.createElement("h3");
+    colD.innerHTML = userData.Mascotas;
 
 
     user.appendChild(title);
     user.appendChild(colA);
     user.appendChild(colB);
     user.appendChild(colC);
+    user.appendChild(colD);
     usersContainer.appendChild(user);
 }
 
@@ -78,30 +80,30 @@ function createList(users) {
 
 
 function recogerValores() {
-   
-let valor1= filter.value;
-let valor2= filter2.value;
 
 let user1= data.filter(user=>user.Nombre===filter.value)[0];
-let user2= data.filter(user=>user.Nombre===filter2.value)[0];    
+let user2= data.filter(user=>user.Nombre===filter2.value)[0];
+
 operacion(user1, user2);
+
 console.log(user1);
     
 }
-
+var resultado= document.createElement("h3");
 function operacion(a,b){
-
-   var propunto= (a.A * b.A) + (a.B * b.B) + (a.C * b.C);
+    
+resultado.innerHTML= "";
+   var propunto= (a.Edad * b.Edad) + (a.Peso * b.Peso) + (a.Altura * b.Altura) + (a.Mascotas * b.Mascotas);
    console.log(propunto);
 
-   var magnitud= Math.sqrt(Math.pow(a.A, 2)+Math.pow(a.B,2)+ Math.pow(a.C,2)) * Math.sqrt(Math.pow(b.A,2)+Math.pow(b.B,2)+ Math.pow(b.C,2));
+   var magnitud= Math.sqrt(Math.pow(a.Edad, 2)+Math.pow(a.Peso,2)+ Math.pow(a.Altura,2) + Math.pow(a.Mascotas,2)) * Math.sqrt(Math.pow(b.Edad,2)+Math.pow(b.Peso,2)+ Math.pow(b.Altura,2)+ Math.pow(a.Mascotas,2));
   console.log(magnitud);
 
    var res= propunto/magnitud;
 
    console.log(res);
 
-   let resultado= document.createElement("h3");
+  
    resultado.innerHTML= res;
 
    filtersContainer.appendChild(resultado);

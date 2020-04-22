@@ -20,8 +20,12 @@
           flex-direction: row;
 }
 
+.App-titles .edad {
+  margin-left: 30px;
+}
+
 .App-titles > h2 {
-  margin-left: 120px;
+  margin-left: 100px;
 }
 
 .App-cont {
@@ -56,5 +60,6 @@
   margin-left: 30px;
   color: white;
   width: 250px;
+  text-align: left;
 }
 /*# sourceMappingURL=index.css.map */
